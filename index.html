@@ -13,7 +13,7 @@
 <div class="w3-container w3-card">
   <p>      
   <label class="w3-text-blue"><b>Add URL</b></label>
-  <input class="w3-input w3-border" name="url" type="text"></p>
+  <input class="w3-input w3-border" id="url" type="text"></p>
   <p>      
   <button class="w3-btn w3-blue" onclick="addURL()">Add</button></p>
 </div>
@@ -28,6 +28,19 @@ var list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
 document.getElementById("tb").innerHTML+="<tr><th>URL</th></tr>";
 for(var i=0; i<list.list.length; i++) {
 document.getElementById("tb").innerHTML+="<tr><td><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td></tr>";
+}
+function addURL() {
+    list.list[list.list.length].url=document.getElementById("url").value;
+    xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
+    reload();
+}
+function reload() {
+    list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
+    document.getElementById("tb").innerHTML="";
+    document.getElementById("tb").innerHTML+="<tr><th>URL</th></tr>";
+    for(var i=0; i<list.list.length; i++) {
+    document.getElementById("tb").innerHTML+="<tr><td><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td></tr>";
+    }
 }
 </script>
 </body>
