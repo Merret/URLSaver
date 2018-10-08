@@ -30,7 +30,7 @@ for(var i=0; i<list.list.length; i++) {
 document.getElementById("tb").innerHTML+="<tr><td><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td></tr>";
 }
 function addURL() {
-    list.list[list.list.length].url=document.getElementById("url").value;
+    list.list[list.list.length]={"url":document.getElementById("url").value};
     xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
     reload();
 }
