@@ -17,14 +17,17 @@
   <p>      
   <button class="w3-btn w3-blue" onclick="addURL()">Add</button></p>
 </div>
-<div id="list">
+<div id="list" class="w3-container">
+<table id="tb">
 
+</table>
 </div>
 <script>
 var base = urldata("id");
 var list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
+document.getElementById("tb").innerHTML+="<tr><th>URL</th></tr>";
 for(var i=0; i<list.list.length; i++) {
-document.getElementById("list").innerHTML+="<a href='"+list.list[i].url+"'>"+list.list[i].url+"</a><br>";
+document.getElementById("tb").innerHTML+="<tr><td><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td></tr>";
 }
 </script>
 </body>
