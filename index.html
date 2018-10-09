@@ -26,7 +26,7 @@
 var base = urldata("id");
 var list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
 document.getElementById("tb").innerHTML+="<tr><th>URL</th></tr>";
-for(var i=0; i<list.list.length; i++) {
+for(var i=list.list.length; i>=0; i--) {
 document.getElementById("tb").innerHTML+="<tr><td><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td></tr>";
 }
 function addURL() {
