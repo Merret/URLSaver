@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/xhr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/urldata.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 
@@ -36,7 +37,7 @@ function reload() {
     document.getElementById("tb").innerHTML="";
     document.getElementById("tb").innerHTML+="<tr><th>URL</th></tr>";
     for(var i=list.list.length-1; i>=0; i--) {
-        document.getElementById("tb").innerHTML+="<div class='w3-padding w3-margin w3-card w3-round'><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></div>";
+        document.getElementById("tb").innerHTML+="<div class='w3-padding w3-margin w3-card w3-round'><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a><i class='fas fa-times'></i></div>";
     }
 }
 function del(x) {
