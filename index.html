@@ -44,7 +44,7 @@ function reload() {
     }
 }
 function del(x) {
-	delete list.list[x];
+	list.list.splice(x,1);
 	xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
 	reload();
 }
