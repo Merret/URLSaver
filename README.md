@@ -1,5 +1,5 @@
 # URLSaver
-URLSaver is a free service which provides a webpage to store URLs and help you to share them to others.
+URLSaver is a free service which provides a webpage to store URLs and help you to share them with others.
 
 ## Usage
 Go to [https://merret.github.io/URLSaver/](https://merret.github.io/URLSaver/).
@@ -8,7 +8,9 @@ The website will create a new list for you.
 
 And you can add URLs to the list.
 
-Then copy the URL of list (like [https://merret.github.io/URLSaver/?id=123mng](https://merret.github.io/URLSaver/?id=123mng)) to share them!
+Then copy the URL of list (like [https://merret.github.io/URLSaver/?id=123mng](https://merret.github.io/URLSaver/?id=123mng)) to share editable list with others!
+
+Or share a read-only list with others,
 
 ## License
 This project is under [MIT LICENSE](https://github.com/Merret/URLSaver/raw/master/LICENSE).
