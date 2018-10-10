@@ -106,7 +106,7 @@ function more(x) {
 	document.getElementById("dURL").value = list.list[x].url;
 	document.getElementById("detail").style.opacity = 1;
 	document.getElementById("detail").style.zIndex = 2;
-	document.getElementById("dBtn").onclick = updata(x);
+	document.getElementById("dBtn").onclick = "updata("+x+")";
 }
 document.getElementById("detail").onload = function() {
 	var elm = document.getElementById("detail");
