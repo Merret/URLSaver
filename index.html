@@ -92,6 +92,17 @@ function del(x) {
 	xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
 	reload();
 }
+function update(x) {
+	list.list[x].title = document.getElementById("dTitle").value;
+	list.list[x].url = document.getElementById("dURL").value;
+	xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
+	reload();
+}
+function more(x) {
+	document.getElementById("dTitle").value = list.list[x].title || list.list[x].url;
+	document.getElementById("dURL").value = list.list[x].url;
+	document.getElementById("dBtn").onclick = updata(x);
+}
 document.getElementById("detail").onload = function() {
 	var elm = document.getElementById("detail");
 	elm.style.left = (window.innerWidth - elm.width) / 2 + "px";
