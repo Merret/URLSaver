@@ -11,7 +11,7 @@
 <h1>Creating new list...</h1>
 <script>
 var back = JSON.parse(xhr.post("https://api.myjson.com/bins",'{"list":[{"url":"https://github.com/Merret/URLSaver"}]}'));
-
+location.href="/"+back.uri.substring(28);
 </script>
 </body>
 </html>
