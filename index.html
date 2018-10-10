@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/xhr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/urldata.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <style>
 .button {
@@ -46,6 +47,7 @@ tr:hover {
   </table>
 </div>
 <script>
+new ClipboardJS('.copy');
 var base = urldata("id");
 if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){location.href="create.html"}
 var list;
@@ -60,7 +62,7 @@ function reload() {
     document.getElementById("tb").innerHTML="";
     document.getElementById("tb").innerHTML+="<tr><th>URL</th><th></th></tr>";
     for(var i=list.list.length-1; i>=0; i--) {
-        document.getElementById("tb").innerHTML+="<tr><td class='w3-padding w3-round'><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td><td><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-margin' onclick='del("+i+")'></i></td></tr>";
+        document.getElementById("tb").innerHTML+="<tr><td class='w3-padding w3-round'><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td><td><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-margin' onclick='del("+i+")'></i><i class='fas fa-clone button w3-text-blue w3-border w3-border-blue w3-round w3-padding w3-hover-shadow w3-margin copy' data-clipboard-text='"+list.list[i].url+"'></i></td></tr>";
     }
 }
 function del(x) {
