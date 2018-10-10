@@ -99,13 +99,13 @@ function update(x) {
 	xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
 	reload();
 	document.getElementById("detail").style.opacity = 0;
-	document.getElementById("detail").style.z-index = -1;
+	document.getElementById("detail").style.zIndex = -1;
 }
 function more(x) {
 	document.getElementById("dTitle").value = list.list[x].title || list.list[x].url;
 	document.getElementById("dURL").value = list.list[x].url;
 	document.getElementById("detail").style.opacity = 1;
-	document.getElementById("detail").style.z-index = 2;
+	document.getElementById("detail").style.zIndex = 2;
 	document.getElementById("dBtn").onclick = updata(x);
 }
 document.getElementById("detail").onload = function() {
