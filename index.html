@@ -40,7 +40,7 @@ function reload() {
     document.getElementById("tb").innerHTML="";
     document.getElementById("tb").innerHTML+="<tr><th>URL</th></tr>";
     for(var i=list.list.length-1; i>=0; i--) {
-        document.getElementById("tb").innerHTML+="<div class='w3-padding w3-margin w3-card w3-round'><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-right-align' onclick='del("+i+")'></i></div>";
+        document.getElementById("tb").innerHTML+="<div class='w3-padding w3-margin w3-card w3-round w3-display-container'><a class='w3-display-left' href='"+list.list[i].url+"'>"+list.list[i].url+"</a><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-display-right' onclick='del("+i+")'></i></div>";
     }
 }
 function del(x) {
