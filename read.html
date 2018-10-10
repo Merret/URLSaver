@@ -43,7 +43,7 @@ new ClipboardJS('.button');
 var base = urldata("id");
 var list;
 reload();
-if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){document.getElementById("list").innerHTML="Nothing in the list.<a href='./'>Homepage</a>"}
+if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){document.getElementById("list").innerHTML="No any URL is in the list.<a href='./'>Homepage</a>"}
 function reload() {
     list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
     document.getElementById("tb").innerHTML="";
