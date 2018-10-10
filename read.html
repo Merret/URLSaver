@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shared list | URL Saver</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/xhr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/urldata.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+.button {
+	cursor: pointer
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+}
+td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+tr:hover {
+	background-color: #f5f5f5;
+	border-left: #2196F3;
+}
+</style>
+</head>
+<body>
+<div class="w3-container" style="font-size: 2em"><i class="fas fa-list-ul"></i><span> Shared List </span></div>
+<div id="list" class="w3-container">
+  <table id="tb" style="width: 100%;text-align: center;">
+  </table>
+</div>
+<script>
+var base = urldata("id");
+if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){location.href="create.html"}
+var list;
+reload();
+function addURL() {
+    list.list[list.list.length]={"url":document.getElementById("url").value};
+    xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
+    reload();
+}
+function reload() {
+    list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
+    document.getElementById("tb").innerHTML="";
+    document.getElementById("tb").innerHTML+="<tr><th>URL</th><th></th></tr>";
+    for(var i=list.list.length-1; i>=0; i--) {
+        document.getElementById("tb").innerHTML+="<tr><td class='w3-padding w3-round'><a href='"+list.list[i].url+"'>"+list.list[i].url+"</a></td><td><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-margin' onclick='del("+i+")'></i></td></tr>";
+    }
+}
+function del(x) {
+	list.list.splice(x,1);
+	xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
+	reload();
+}
+</script>
+</body>
+</html>
