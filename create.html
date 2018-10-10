@@ -10,7 +10,7 @@
 <body class="w3-container">
 <h1>Creating new list...</h1>
 <script>
-var list = JSON.parse('{"list":[{"url":"https://github.com/Merret/URLSaver"}]}');
+var list = JSON.parse('{"list":[{"url":"https://github.com/Merret/URLSaver", "title":"URL Saver"}]}');
 var back = JSON.parse(xhr.post("https://api.myjson.com/bins",'{"list":[{"url":"https://github.com/Merret/URLSaver"}]}'));
 list.list[0].url="https://merret.github.io/URLSaver/?id="+back.uri.substring(28);
 xhr.put(back.uri, JSON.stringify(list));
