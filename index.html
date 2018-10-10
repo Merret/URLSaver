@@ -92,6 +92,11 @@ function del(x) {
 	xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
 	reload();
 }
+document.getElementById("detail").onload = function() {
+	var elm = document.getElementById("detail");
+	elm.style.left = (window.innerWidth - elm.width) / 2 + "px";
+	elm.style.top = (window.innerHeight - elm.height) / 2 + "px";
+	}
 </script>
 </body>
 </html>
