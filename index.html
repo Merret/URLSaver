@@ -98,7 +98,7 @@ function more(x) {
 	document.getElementById("dTitle").value = list.list[x].title || list.list[x].url;
 	document.getElementById("dURL").value = list.list[x].url;
 	document.getElementById("detail").style.display = "inline-block";
-	document.getElementById("dBtn").innerHTML ='<button class="w3-btn w3-green w3-margin w3-round" onclick="update('+x+')">Confirm</button>';
+	document.getElementById("dBtn").innerHTML ='<button class="w3-btn w3-green w3-margin w3-round" onclick="update('+x+')">Confirm</button><button class="w3-btn w3-red w3-margin w3-round" onclick="document.getElementById(\'detail\').style.display = \'none\'">Cancel</button>';
 }
 </script>
 </body>
