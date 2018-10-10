@@ -41,14 +41,9 @@ tr:hover {
 <script>
 new ClipboardJS('.button');
 var base = urldata("id");
-if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){location.href="create.html"}
 var list;
 reload();
-function addURL() {
-    list.list[list.list.length]={"url":document.getElementById("url").value};
-    xhr.put("https://api.myjson.com/bins/"+base, JSON.stringify(list));
-    reload();
-}
+if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){document.getElementById("tb").innerHTML="Nothing in the list.<a href='./'>Homepage</a>"}
 function reload() {
     list = JSON.parse(xhr.get("https://api.myjson.com/bins/"+base));
     document.getElementById("tb").innerHTML="";
