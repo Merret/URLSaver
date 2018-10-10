@@ -79,7 +79,7 @@ function reload() {
     document.getElementById("tb").innerHTML+="<tr><th>URL</th><th></th></tr>";
     for(var i=list.list.length-1; i>=0; i--) {
 	var title = list.list[i].title || list.list[i].url;
-        document.getElementById("tb").innerHTML+="<tr><td class='w3-padding w3-round'><a href='"+list.list[i].url+"'>"+title+"</a></td><td><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-margin' onclick='del("+i+")'></i><i class='fas fa-clone button w3-text-blue w3-border w3-border-blue w3-round w3-padding w3-hover-shadow w3-margin copy' data-clipboard-text='"+list.list[i].url+"'></i><i class='fas fa-ellipsis-h button w3-border w3-round w3-padding w3-hover-shadow w3-margin' onclick='more("+i+")'></i></td></tr>";
+        document.getElementById("tb").innerHTML+="<tr><td class='w3-padding w3-round'><a href='"+list.list[i].url+"'>"+title+"</a></td><td width='30%'><i class='fas fa-times button w3-text-red w3-border w3-border-red w3-round w3-padding w3-hover-shadow w3-margin' onclick='del("+i+")'></i><i class='fas fa-clone button w3-text-blue w3-border w3-border-blue w3-round w3-padding w3-hover-shadow w3-margin copy' data-clipboard-text='"+list.list[i].url+"'></i><i class='fas fa-ellipsis-h button w3-border w3-round w3-padding w3-hover-shadow w3-margin' onclick='more("+i+")'></i></td></tr>";
     }
 }
 function del(x) {
