@@ -12,5 +12,6 @@ Then copy the URL of list (like [https://merret.github.io/URLSaver/?id=123mng](h
 
 ## License
 This project is under [MIT LICENSE](https://github.com/Merret/URLSaver/raw/master/LICENSE).
+
 ## Thanks
 Thanks [myjson.com](https://myjson.com/) provides service about JSON storing.
