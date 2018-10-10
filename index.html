@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/xhr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/urldata.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/align.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <style>
@@ -35,6 +34,7 @@ tr:hover {
 .detail {
 	z-index: -1;
 	display: none;
+	position: fixed;
 	width: 60%;
 	height: 60%;
 	background-color: white;
@@ -70,7 +70,6 @@ tr:hover {
   </table>
 </div>
 <script>
-alignA("detail");
 new ClipboardJS('.copy');
 var base = urldata("id");
 if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){location.href="create.html"}
@@ -107,7 +106,7 @@ function update(x) {
 function more(x) {
 	document.getElementById("dTitle").value = list.list[x].title || list.list[x].url;
 	document.getElementById("dURL").value = list.list[x].url;
-	document.getElementById("detail").style.display = "";
+	document.getElementById("detail").style.display = "inline-block";
 	document.getElementById("detail").style.zIndex = 2;
 	document.getElementById("dBtn").innerHTML ='<button class="w3-btn w3-green w3-display-bottomright w3-padding w3-round" onclick="update('+x+')">Confirm</button>';
 }
