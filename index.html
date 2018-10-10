@@ -42,14 +42,16 @@ tr:hover {
 </style>
 </head>
 <body>
-<div class="detail w3-round w3-card w3-display-container" id="detail">
+<div class="detail w3-round w3-card" id="detail">
 	<span class="w3-padding">Title: </span>
 	<input class="w3-padding" id="dTitle" type="text">
 	<br>
 	<span class="w3-padding">URL: </span>
 	<input class="w3-padding" id="dURL" type="text">
 	<br>
-	<button class="w3-btn w3-green w3-display-bottomright w3-padding w3-round" id="dBtn">Confirm</button>
+	<div id="dBtn">
+	
+	</div>
 </div>
 <div class="w3-card w3-padding w3-display-container">
   <p>
@@ -107,7 +109,7 @@ function more(x) {
 	document.getElementById("dURL").value = list.list[x].url;
 	document.getElementById("detail").style.display = "";
 	document.getElementById("detail").style.zIndex = 2;
-	document.getElementById("dBtn").addEventListener("click", updata(x));
+	document.getElementById("dBtn").innerHTML ='<button class="w3-btn w3-green w3-display-bottomright w3-padding w3-round" onclick="update('+x+')">Confirm</button>';
 }
 </script>
 </body>
