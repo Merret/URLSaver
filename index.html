@@ -64,8 +64,8 @@ tr:hover {
 <script>
 new ClipboardJS('.copy');
 var base = urldata("id");
-if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){location.href="create.html"}
-document.getElementById("share").href="./read.html?id="+base;
+if(xhr.get("https://api.myjson.com/bins/"+base)=="xhr.GET Error. statue: 404"){location.href="create"}
+document.getElementById("share").href="./read?id="+base;
 var list;
 reload();
 function addURL() {
