@@ -10,7 +10,7 @@ And you can add URLs to the list.
 
 Then copy the URL of list (like [https://merret.github.io/URLSaver/?id=123mng](https://merret.github.io/URLSaver/?id=123mng)) to share editable list with others!
 
-Or share a read-only list with others. (like [https://merret.github.io/URLSaver/read.html?id=123mng](https://merret.github.io/URLSaver/read.html?id=123mng))
+Or share a read-only list with others. (like [https://merret.github.io/URLSaver/read?id=123mng](https://merret.github.io/URLSaver/read?id=123mng))
 
 ## License
 This project is under [MIT LICENSE](https://github.com/Merret/URLSaver/raw/master/LICENSE).
